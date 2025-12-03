@@ -1,16 +1,8 @@
 public class Main6 {
     public static void main(String[] args) {
-       int price = 1000;
-        System.out.println("更新前の価格:" + price +"円");
-        price = 1200;
-        System.out.println("更新後の価格:" + price +"円");
-        price = 800;
-        System.out.println("更新前の価格:" + price +"円");
-        price = 950;
-        System.out.println("更新後の価格:" + price +"円");
-        price = 2000;
-        System.out.println("更新前の価格:" + price +"円");
-        price = 1500;
-        System.out.println("更新後の価格:" + price +"円");
+     int price = 1000;
+     System.out.println("更新前の価格:" + price +"円");
+     price = 1200;
+     System.out.println("更新後の価格:" + price +"円");
     }
 }
