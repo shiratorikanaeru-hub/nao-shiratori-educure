@@ -1,8 +1,8 @@
 public class Main2 {
     public static void main(String[] args) {
-      int testscore;
-      int studentnumber;
+      int testScore;
+      int studentNumber;
       boolean passed;
-      String studentname;
+      String studentName;
     }
 }
