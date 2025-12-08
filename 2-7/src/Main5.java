@@ -5,9 +5,9 @@ public class Main5 {
         int tax=(int)x;
         int total =subtotal+tax;
         int change =2000-total;
-        System.out.println("小計:"+subtotal);
-        System.out.println("消費税:"+tax);
-        System.out.println("合計金額:"+total);
-        System.out.println("おつり:"+change);
+        System.out.println("小計:"+subtotal+"円");
+        System.out.println("消費税:"+tax+"円");
+        System.out.println("合計金額:"+total+"円");
+        System.out.println("おつり:"+change+"円");
     }
 }
