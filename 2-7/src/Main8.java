@@ -6,11 +6,11 @@ public class Main8 {
         System.out.println("攻撃力を入力してください："); 
         String attackPower = scanner.nextLine();
         int attack = Integer.parseInt(attackPower); 
-        System.out.println("防衛力を入力してください：");
-        String difencepower = scanner.nextLine();
-        int difence = Integer.parseInt(difencepower); 
+        System.out.println("防御力を入力してください：");
+        String defensePower = scanner.nextLine();
+        int defense = Integer.parseInt(defensePower); 
         scanner.close();
-        int damage =attack-difence;
+        int damage =attack-defense;
         System.out.println("通常ダメージ:"+damage);
         double criticalHit =damage*1.5;
         int hit =(int)criticalHit;
