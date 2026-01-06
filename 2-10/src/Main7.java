@@ -12,7 +12,7 @@ public class Main7 {
                         System.out.println("B");
                         break;
                     default:
-                        System.out.println("c");
+                        System.out.println("C");
                         break;
                 }
                 break;

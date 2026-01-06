@@ -2,7 +2,7 @@ public class Main9 {
     public static void main(String[] args) {
         int num1 = 10;
         int num2 = 5;
-        char operator = '+';  // +, -, *, / のいずれか
+        char operator = '+';
         switch (operator) {
             case '+':
                 System.out.println("結果:"+(num1+num2));
@@ -14,7 +14,12 @@ public class Main9 {
                 System.out.println("結果:"+(num1*num2));
                 break;
             case '/':
-                System.out.println("エラー:0で割ることができません");//2つ目のオペランドが0の場合
+                if (num2==0) {
+                  System.out.println("エラー：０で割ることはできません");
+                }else {
+                  System.out.println("結果:"+(num1/num2));
+                }
+                break;
             default:
                 System.out.println("エラー:無効な演算子です");
                 break;
