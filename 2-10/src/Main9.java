@@ -1,28 +1,40 @@
+import javax.print.DocFlavor.STRING;
+
 public class Main9 {
     public static void main(String[] args) {
         int num1 = 10;
         int num2 = 5;
         char operator = '+';
+        int result=0;
+        boolean error=false;
+        String errorMessage="";
         switch (operator) {
             case '+':
-                System.out.println("結果:"+(num1+num2));
+                result=num1+num2;
                 break;
             case '-':
-                System.out.println("結果:"+(num1-num2));
+                result=num1-num2;
                 break;
             case '*':
-                System.out.println("結果:"+(num1*num2));
+                result=num1*num2;
                 break;
             case '/':
                 if (num2==0) {
-                  System.out.println("エラー：０で割ることはできません");
+                  error=true;
+                  errorMessage="エラー:0で割ることはできません";
                 }else {
-                  System.out.println("結果:"+(num1/num2));
+                  result=num1/num2;
                 }
                 break;
             default:
-                System.out.println("エラー:無効な演算子です");
+                error=true;
+                errorMessage="エラー:無効な演算子です";
                 break;
+        }
+        if (error) {
+            System.out.println(errorMessage);
+          }else{
+            System.out.println("結果:"+result);
         }
     }
 }
