@@ -1,5 +1,3 @@
-import javax.print.DocFlavor.STRING;
-
 public class Main9 {
     public static void main(String[] args) {
         int num1 = 10;
