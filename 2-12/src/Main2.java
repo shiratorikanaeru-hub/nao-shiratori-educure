@@ -4,6 +4,7 @@ public class Main2 {
         for(int number=1;number<=9;number++){
             System.out.println(dan + "×" + number + "=" +(dan*number));
         }
+        System.out.println();
        }
     }
 }
