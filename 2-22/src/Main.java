@@ -2,14 +2,14 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int max = 20;
+       final int max = 20;
 
         Scanner scanner = new Scanner(System.in);
 
-        String[] english = new String[max];
-        String[] japanese = new String[max];
+        String[] englishWords = new String[max];
+        String[] japaneseWords = new String[max];
 
-        int count=0;
+        int count=0; //登録済み単語を管理
 
         while (true) {
              System.out.println("1: 単語を登録する");
@@ -29,11 +29,11 @@ public class Main {
                 System.out.println("登録可能な単語数は20個までです");
                 continue;
              }
-                System.out.print("英単語を入力してください: ");
-                 english[count]=scanner.nextLine();
+                System.out.print("単語を入力してください: ");
+                 englishWords[count]=scanner.nextLine();
 
                 System.out.print("日本語を入力してください: ");
-                japanese[count] = scanner.nextLine();
+                japaneseWords[count] = scanner.nextLine();
                  count++;
 
                 System.out.println("登録しました");
@@ -43,29 +43,28 @@ public class Main {
                 System.out.println("単語が登録されていません");
                 continue;
             }
-            int correct=0;
+            int correct=0;  //正解数を管理
 
             for(int i=0; i<count; i++){
-                System.out.println("問題: "+english[i]);
+                System.out.println("問題: "+englishWords[i]);
                 System.out.print("日本語を入力してください: ");
                 String answer=scanner.nextLine();
 
-                if (answer.equals(japanese[i])) {
+                if (answer.equals(japaneseWords[i])) {
                     System.out.println("正解！");
                     correct++;
                 }else{
                     System.out.println("不正解です");
+                    System.out.println("正解は「"+japaneseWords[i]+"」です");
                 }
-        }
-        System.out.println(count+"問中"+correct+"問正解でした!");
+           }
+            System.out.println(count+"問中"+correct+"問正解でした!");
        
             }else if (choose==3) {
                 System.out.println("プログラムが終了します");
                 break;
-            }else{
-                System.out.println("1-3の数字を入力してください");
-            }
         }
-        scanner.close();
     }
+    scanner.close();
   }
+}
