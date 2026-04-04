@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
        final int max = 20;
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in,"MS932");
 
         String[] englishWords = new String[max];
         String[] japaneseWords = new String[max];
