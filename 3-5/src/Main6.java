@@ -5,6 +5,6 @@ public class Main6 {
         sm.deposit(1000);
         System.out.println("残高:"+sm.balance+"円");
         sm.withdraw(500);
-        System.out.println("出勤後残高:"+sm.balance+"円");
+        System.out.println("出金後残高:"+sm.balance+"円");
     }
 }
