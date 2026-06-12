@@ -13,6 +13,9 @@ public class Main3 {
     }
 
     public static boolean validatePassword(String password) {
+        if (password.length()<8) {
+            return false;
+        }
         if (!password.matches(".*[A-Z].*")) {
             return false;
         }
