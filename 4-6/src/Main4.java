@@ -10,7 +10,7 @@ public class Main4 {
         // 発見したモンスターを管理するHashSet（重複なし）
         LinkedHashSet<String> discoveredMonsters = new LinkedHashSet<>();
         // 全モンスターのリスト
-        ArrayList<String> allMonsters = new ArrayList<>(Arrays.asList("スライム","ドラゴン","フェニックス","ユニコーン"));
+        ArrayList<String> allMonsters = new ArrayList<>(Arrays.asList("スライム","ドラゴン","ゴブリン","フェニックス","ユニコーン"));
         // モンスターとの遭遇をシミュレート
         for(int i=0;i<5;i++){
             battleHistory.add("スライム");
