@@ -1,5 +1,5 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -20,7 +20,7 @@ public class RPGCharacterTest {
 
         character.levelUp();
 
-        assertEquals(2, character.getLevel(), "レベルが1上がるべきです");
+        assertEquals(2, character.getLevel(), "レベルが上がるべきです");
         assertEquals(110, character.getHP(), "HPが10増えるべきです");
         assertEquals(55, character.getMP(), "MPが5増えるべきです");
     }
@@ -36,18 +36,28 @@ public class RPGCharacterTest {
 
         // レベル98 → 99
         character.levelUp();
-        assertEquals(99, character.getLevel(), "レベル98から99に上がるべきです");
 
-        // レベル99でさらに上げようとすると例外
-        try {
-            character.levelUp();
-            fail("レベル99でレベルアップすると例外が発生するはずです");
-        } catch (IllegalStateException e) {
-            assertEquals(
+        assertEquals(99, character.getLevel(),
+                "レベル98から99に上がるべきです");
+
+        // レベル99になったときのHPとMPを確認
+        assertEquals(1080, character.getHP(),
+                "レベル99のHPは1080であるべきです");
+
+        assertEquals(540, character.getMP(),
+                "レベル99のMPは540であるべきです");
+
+        // レベル99からさらにレベルアップすると例外
+        IllegalStateException exception = assertThrows(
+                IllegalStateException.class,
+                () -> character.levelUp()
+        );
+
+        // 例外メッセージを確認
+        assertEquals(
                 "最大レベルに達しています",
-                e.getMessage(),
+                exception.getMessage(),
                 "例外メッセージが正しくありません"
-            );
-        }
+        );
     }
 }
