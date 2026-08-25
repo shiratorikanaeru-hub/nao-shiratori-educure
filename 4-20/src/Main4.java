@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Main4 {
+
     public static void main(String[] args) {
         try {
             // ファイルとフォルダのパス
@@ -12,6 +13,12 @@ public class Main4 {
             Path backupFile = backupFolder.resolve("source.txt");
             Path archiveFolder = Paths.get("archive");
             Path archiveFile = archiveFolder.resolve("source.txt");
+
+            // source.txt がなければ作成
+            if (!Files.exists(source)) {
+                Files.writeString(source, "サンプルテキスト");
+                System.out.println("source.txt が存在しないため、サンプルファイルを作成しました。");
+            }
 
             // backupフォルダがなければ作成
             if (!Files.exists(backupFolder)) {
