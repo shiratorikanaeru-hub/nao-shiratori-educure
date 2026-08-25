@@ -2,9 +2,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class Main4 {
-
     public static void main(String[] args) {
         try {
             // ファイルとフォルダのパス
@@ -13,47 +13,37 @@ public class Main4 {
             Path backupFile = backupFolder.resolve("source.txt");
             Path archiveFolder = Paths.get("archive");
             Path archiveFile = archiveFolder.resolve("source.txt");
-
-            // source.txt がなければ作成
+            // source.txtがなければ作成
             if (!Files.exists(source)) {
                 Files.writeString(source, "サンプルテキスト");
-                System.out.println("source.txt が存在しないため、サンプルファイルを作成しました。");
+                System.out.println("ソースファイルを作成しました。");
             }
-
             // backupフォルダがなければ作成
             if (!Files.exists(backupFolder)) {
                 Files.createDirectory(backupFolder);
             }
-
             // archiveフォルダがなければ作成
             if (!Files.exists(archiveFolder)) {
                 Files.createDirectory(archiveFolder);
             }
-
             // source.txtをbackupへコピー
-            Files.copy(source, backupFile);
-
+            Files.copy(source, backupFile, StandardCopyOption.REPLACE_EXISTING);
             System.out.println("ファイルが 'backup/' にコピーされました。");
-
             // コピーの確認
             if (Files.exists(backupFile)) {
                 System.out.println("コピーの確認：成功");
             } else {
                 System.out.println("コピーの確認：失敗");
             }
-
             // backup/source.txtをarchiveへ移動
-            Files.move(backupFile, archiveFile);
-
+            Files.move(backupFile, archiveFile, StandardCopyOption.REPLACE_EXISTING);
             System.out.println("ファイルが 'archive/' に移動されました。");
-
             // 移動の確認
             if (Files.exists(archiveFile)) {
                 System.out.println("移動の確認：成功");
             } else {
                 System.out.println("移動の確認：失敗");
             }
-
         } catch (IOException e) {
             System.out.println("ファイル操作中にエラーが発生しました。");
             e.printStackTrace();
