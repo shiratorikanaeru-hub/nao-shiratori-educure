@@ -52,3 +52,4 @@ sequenceDiagram
     else 決済失敗
         OS-->>User: false（注文失敗）
     end
+    
