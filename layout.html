@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexboxレイアウト</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background: #f0f0f0;
+      }
+
+      nav {
+        display: flex;
+        gap: 20px;
+      }
+
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .card {
+        flex: 1 1 250px;
+        padding: 24px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        transition: box-shadow 0.2s ease;
+      }
+
+      .card:hover {
+        box-shadow: 0 4px 12px rgb(0 0 0 / 20%);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>ロゴ</strong>
+      <nav>
+        <a href="#">ホーム</a>
+        <a href="#">サービス</a>
+        <a href="#">お問い合わせ</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="card">
+        <h2>カード1</h2>
+        <p>カードの内容です。</p>
+      </article>
+      <article class="card">
+        <h2>カード2</h2>
+        <p>カードの内容です。</p>
+      </article>
+      <article class="card">
+        <h2>カード3</h2>
+        <p>カードの内容です。</p>
+      </article>
+    </main>
+  </body>
+</html>
